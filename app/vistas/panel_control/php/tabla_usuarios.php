@@ -36,12 +36,18 @@
 		      <td><a data-href="'.$result[$i]["usuarios_id"].'" data-toggle="modal" data-target="#confirm-delete"><i class="bi bi-person-x-fill icono_rojo"></i></a></td>';
 		}
 
+		if($result[$i]["usuarios_tipo"] == 1){
+			$tipo_usuario	    = "ADMIN";
+		}else{
+			$tipo_usuario	    = "USER";
+		}
+
 		echo '<tr>
 		      <th scope="row">'.$j++.'</th>
 		      <td>'.$result[$i]["usuarios_nombre"].'</td>
 		      <td>'.$result[$i]["usuarios_mail"].'</td>
 		      <td>'.$result[$i]["usuarios_nick"].'</td>
-		      <td>'.$result[$i]["usuarios_tipo"].'</td>
+		      <td>'.$tipo_usuario.'</td>
 		      '.$panel.'
 		    </tr>';
 	}
